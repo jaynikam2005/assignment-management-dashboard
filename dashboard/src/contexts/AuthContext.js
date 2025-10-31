@@ -9,13 +9,12 @@ export const AuthProvider = ({ children }) => {
   const [admins, setAdmins] = useState([]);
 
   useEffect(() => {
-    // Initialize mock data
+    // Reset data on first load to get fresh mockData
+    localStorage.clear();
     initializeMockData();
     setStudents(getStudents());
     setAdmins(getAdmins());
-    // Reset data on first load to get fresh mockData
-localStorage.clear();
-initializeMockData();
+
     // Check if user was logged in before
     const savedUser = localStorage.getItem('currentUser');
     if (savedUser) {
