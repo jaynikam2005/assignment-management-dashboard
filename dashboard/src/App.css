@@ -6,3 +6,11 @@
 * {
   box-sizing: border-box;
 }
+
+select option {
+  padding: 8px;
+}
+
+select option:hover::before {
+  content: attr(data-info);
+}
