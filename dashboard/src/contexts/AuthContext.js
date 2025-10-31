@@ -32,6 +32,39 @@ export const AuthProvider = ({ children }) => {
     return null;
   };
 
+  const register = (name, email, role) => {
+    // Check if email already exists
+    const allUsers = [...students, ...admins];
+    if (allUsers.some(u => u.email === email)) {
+      return { success: false, error: 'Email already registered' };
+    }
+
+    // Create new user
+    const newUser = {
+      id: role === 'student' ? `s${Date.now()}` : `a${Date.now()}`,
+      name,
+      email,
+      role
+    };
+
+    // Save to localStorage
+    if (role === 'student') {
+      const updatedStudents = [...students, newUser];
+      localStorage.setItem('students', JSON.stringify(updatedStudents));
+      setStudents(updatedStudents);
+    } else {
+      const updatedAdmins = [...admins, newUser];
+      localStorage.setItem('admins', JSON.stringify(updatedAdmins));
+      setAdmins(updatedAdmins);
+    }
+
+    // Auto-login after registration
+    setCurrentUser(newUser);
+    localStorage.setItem('currentUser', JSON.stringify(newUser));
+
+    return { success: true, user: newUser };
+  };
+
   const logout = () => {
     setCurrentUser(null);
     localStorage.removeItem('currentUser');
@@ -44,6 +77,7 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider value={{ 
       currentUser, 
       login, 
+      register,
       logout, 
       isStudent, 
       isAdmin, 
