@@ -125,12 +125,12 @@ The app includes a mock authentication system for testing:
 ### Demo Credentials
 
 **Students:**
-- Alice Johnson
-- Bob Smith
-- Carol White
+- JE Student-1
+- JE Student-2
+- JE Student-3
 
 **Professors:**
-- Prof. David Lee
+- Prof.J.E.
 
 Simply select your role and user from the login page. No password required for demo purposes.
 
