@@ -1,12 +1,12 @@
 // Mock data for students and assignments
 const mockStudents = [
-  { id: 's1', name: 'Alice Johnson', email: 'alice@example.com', role: 'student' },
-  { id: 's2', name: 'Bob Smith', email: 'bob@example.com', role: 'student' },
-  { id: 's3', name: 'Carol White', email: 'carol@example.com', role: 'student' },
+  { id: 's1', name: 'JE Student-1', email: 'JE1@example.com', role: 'student' },
+  { id: 's2', name: 'JE Student-2', email: 'JE2@example.com', role: 'student' },
+  { id: 's3', name: 'JE Student-3', email: 'JE3@example.com', role: 'student' },
 ];
 
 const mockAdmins = [
-  { id: 'a1', name: 'Prof. David Lee', email: 'david@example.com', role: 'admin' },
+  { id: 'a1', name: 'Prof.J.E.', email: 'JE@example.com', role: 'admin' },
 ];
 
 const mockAssignments = [

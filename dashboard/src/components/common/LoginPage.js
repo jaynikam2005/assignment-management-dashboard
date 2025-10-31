@@ -266,10 +266,10 @@ const LoginPage = () => {
               Demo Credentials Available:
             </p>
             <p className="text-xs text-gray-600 text-center">
-              Students: Alice Johnson, Bob Smith, Carol White
+              Students: JE Student-1, JE Student-2, JE Student-3
             </p>
             <p className="text-xs text-gray-600 text-center">
-              Professors: Prof. David Lee
+              Professors: Prof.J.E.
             </p>
           </div>
         )}
