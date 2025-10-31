@@ -13,7 +13,9 @@ export const AuthProvider = ({ children }) => {
     initializeMockData();
     setStudents(getStudents());
     setAdmins(getAdmins());
-
+    // Reset data on first load to get fresh mockData
+localStorage.clear();
+initializeMockData();
     // Check if user was logged in before
     const savedUser = localStorage.getItem('currentUser');
     if (savedUser) {

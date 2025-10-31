@@ -218,21 +218,20 @@ const LoginPage = () => {
                 Select {role === 'student' ? 'Student' : 'Professor'}
               </label>
               <select
-  value={selectedUserId}
-  onChange={(e) => {
-    setSelectedUserId(e.target.value);
-    setError('');
-  }}
-  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-  title="Select a user to login"
->
-  <option value="">-- Select a {role} --</option>
-  {users.map(user => (
-    <option key={user.id} value={user.id} title={`${user.name} - ${user.email}`}>
-      {user.name} ({user.email})
-    </option>
-  ))}
-</select>
+                value={selectedUserId}
+                onChange={(e) => {
+                  setSelectedUserId(e.target.value);
+                  setError('');
+                }}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">-- Select a {role} --</option>
+                {users.map(user => (
+  <option key={user.id} value={user.id} title={`${user.name} - ${user.email}`}>
+    {user.name}
+  </option>
+))}
+              </select>
             </div>
 
             {error && (
