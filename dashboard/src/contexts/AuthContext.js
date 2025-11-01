@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     // Reset data on first load to get fresh mockData
-    localStorage.clear();
+    //localStorage.clear();
     initializeMockData();
     setStudents(getStudents());
     setAdmins(getAdmins());
